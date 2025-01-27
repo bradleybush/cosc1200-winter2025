@@ -1,3 +1,5 @@
+package week2.exercisesforweek;
+
 import java.util.Scanner;
 
 public class Fibonacci
