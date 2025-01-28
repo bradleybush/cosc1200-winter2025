@@ -1,7 +1,7 @@
 // Demo
 
 // Package
-package week4.demos.productdemo;
+package demos.week4.productdemo;
 
 // Imports
 import java.util.Date;

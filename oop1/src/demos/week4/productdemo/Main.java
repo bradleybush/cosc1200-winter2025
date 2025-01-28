@@ -1,4 +1,4 @@
-package week4.demos.productdemo;
+package demos.week4.productdemo;
 
 import java.util.Date;
 

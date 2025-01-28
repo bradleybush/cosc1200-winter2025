@@ -1,4 +1,4 @@
-package week4.demos.triangles;
+package demos.week4.triangles;
 
 public class Main
 {

@@ -1,4 +1,4 @@
-package week2.exercisesforweek;
+package demos.week2.exercisesforweek;
 
 import java.util.Scanner;
 

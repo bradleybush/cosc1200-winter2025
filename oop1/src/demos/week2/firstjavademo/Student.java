@@ -1,4 +1,4 @@
-package org.dc.oop1.objects;
+package demos.week2.firstjavademo;
 
 public class Student
 {

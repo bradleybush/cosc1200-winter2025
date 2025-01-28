@@ -1,3 +1,5 @@
+package demos.week2.helloworld;
+
 public class Main
 {
 	public static void main(String[] args)

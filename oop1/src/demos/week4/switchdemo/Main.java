@@ -1,4 +1,4 @@
-package week4.demos.switchdemo;
+package demos.week4.switchdemo;
 
 import java.util.Scanner;
 
