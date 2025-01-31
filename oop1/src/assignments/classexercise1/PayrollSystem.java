@@ -47,36 +47,10 @@ public class PayrollSystem
 				case 3:
 					System.out.println("Enter ID to search: ");
 					int searchId = inputScanner.nextInt();
-					searchEmployeeByIdAndPrintDetails(searchId);
+					printEmployeeDetailsFromId(searchId);
 					break;
 				case 4:
-					// Prompt user for employee number
-					System.out.println("Which employee? (1-5): ");
-					// Switch inputted employee number and allow the
-					// user to set that employee's salary
-					switch (inputScanner.nextInt())
-					{
-						case 1:
-							e1.setSalaryFromUserInput();
-							break;
-						case 2:
-							e2.setSalaryFromUserInput();
-							break;
-						case 3:
-							e3.setSalaryFromUserInput();
-							break;
-						case 4:
-							e4.setSalaryFromUserInput();
-							break;
-						case 5:
-							e5.setSalaryFromUserInput();
-							break;
-						default:
-							// Input number does not correspond to a
-							// valid employee, display error
-							System.out.println("Employee not found.");
-							break;
-					}
+					setEmployeeSalaryFromUser();
 					break;
 				case 5:
 					// Cause the program loop to end/stop looping
@@ -92,6 +66,10 @@ public class PayrollSystem
 	private static void setEmployeeDataFromUser()
 	{
 		Scanner inputScanner = new Scanner(System.in);
+		// Prompt user for employee number
+		System.out.println("Which employee? (1-5): ");
+		// Switch inputted employee number and allow the
+		// user to set all of that employee's data
 		switch (inputScanner.nextInt())
 		{
 			case 1:
@@ -129,36 +107,68 @@ public class PayrollSystem
 		e5.printDetails();
 	}
 		
-	private static void searchEmployeeByIdAndPrintDetails(int searchId)
+	private static void printEmployeeDetailsFromId(int searchId)
 	{
 		if (searchId == e1.getId())
 		{
-			System.out.println("Employee 1:");
+			System.out.println("1st employee:");
 			e1.printDetails();
 		}
 		else if (searchId == e2.getId())
 		{
-			System.out.println("Employee 2:");
+			System.out.println("2nd employee:");
 			e2.printDetails();
 		}
 		else if (searchId == e3.getId())
 		{
-			System.out.println("Employee 3:");
+			System.out.println("3rd employee:");
 			e3.printDetails();
 		}
 		else if (searchId == e4.getId())
 		{
-			System.out.println("Employee 4:");
+			System.out.println("4th employee:");
 			e4.printDetails();
 		}
 		else if (searchId == e5.getId())
 		{
-			System.out.println("Employee 5:");
+			System.out.println("5th employee:");
 			e5.printDetails();
 		}
 		else
 		{
 			System.out.println("ID " + searchId + " not found.");
+		}
+	}
+	
+	private static void setEmployeeSalaryFromUser()
+	{
+		Scanner inputScanner = new Scanner(System.in);
+		// Prompt user for employee number
+		System.out.println("Which employee? (1-5): ");
+		// Switch inputted employee number and allow the
+		// user to set that employee's salary
+		switch (inputScanner.nextInt())
+		{
+			case 1:
+				e1.setSalaryFromUserInput();
+				break;
+			case 2:
+				e2.setSalaryFromUserInput();
+				break;
+			case 3:
+				e3.setSalaryFromUserInput();
+				break;
+			case 4:
+				e4.setSalaryFromUserInput();
+				break;
+			case 5:
+				e5.setSalaryFromUserInput();
+				break;
+			default:
+				// Input number does not correspond to a
+				// valid employee, display error
+				System.out.println("Employee not found.");
+				break;
 		}
 	}
 }
