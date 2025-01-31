@@ -9,23 +9,24 @@ import java.util.Scanner;
 
 public class PayrollSystem
 {
+	// Initialize employees with basic data
+	private static final Employee e1 = new Employee(0, "e1", "dept", 0.0, 0.0);
+	private static final Employee e2 = new Employee(0, "e2", "dept", 0.0, 0.0);
+	private static final Employee e3 = new Employee(0, "e3", "dept", 0.0, 0.0);
+	private static final Employee e4 = new Employee(0, "e4", "dept", 0.0, 0.0);
+	private static final Employee e5 = new Employee(0, "e5", "dept", 0.0, 0.0);
+	
 	public static void main(String[] args)
 	{
 		// Greet the user
 		System.out.println("Welcome to the Employee Payroll System!");
 		
-		// Initialize employees with basic data
-		Employee e1 = new Employee(0, "e1", "dept", 0.0, 0.0);
-		Employee e2 = new Employee(0, "e2", "dept", 0.0, 0.0);
-		Employee e3 = new Employee(0, "e3", "dept", 0.0, 0.0);
-		Employee e4 = new Employee(0, "e4", "dept", 0.0, 0.0);
-		Employee e5 = new Employee(0, "e5", "dept", 0.0, 0.0);
-		
+		// Main program loop
 		boolean continueProgram = true;
 		int menuChoice;
-		int searchId;
 		while (continueProgram)
 		{
+			// Display menu and store option choice
 			Scanner inputScanner = new Scanner(System.in);
 			System.out.println("1. Define employee data");
 			System.out.println("2. View all employee data");
@@ -34,75 +35,19 @@ public class PayrollSystem
 			System.out.println("5. Exit program");
 			menuChoice = inputScanner.nextInt();
 			
+			// Execute menu actions
 			switch (menuChoice)
 			{
 				case 1:
-					switch (inputScanner.nextInt())
-					{
-						case 1:
-							e1.setAllFromUserInput();
-							break;
-						case 2:
-							e2.setAllFromUserInput();
-							break;
-						case 3:
-							e3.setAllFromUserInput();
-							break;
-						case 4:
-							e4.setAllFromUserInput();
-							break;
-						case 5:
-							e5.setAllFromUserInput();
-							break;
-						default:
-							System.out.println("Employee not found.");
-							break;
-					}
+					setEmployeeDataFromUser();
 					break;
 				case 2:
-					System.out.println("1st employee:");
-					e1.printDetails();
-					System.out.println("2nd employee:");
-					e2.printDetails();
-					System.out.println("3rd employee:");
-					e3.printDetails();
-					System.out.println("4th employee:");
-					e4.printDetails();
-					System.out.println("5th employee:");
-					e5.printDetails();
+					printAllEmployeeData();
 					break;
 				case 3:
 					System.out.println("Enter ID to search: ");
-					searchId = inputScanner.nextInt();
-					if (searchId == e1.getId())
-					{
-						System.out.println("Employee 1:");
-						e1.printDetails();
-					}
-					else if (searchId == e2.getId())
-					{
-						System.out.println("Employee 2:");
-						e2.printDetails();
-					}
-					else if (searchId == e3.getId())
-					{
-						System.out.println("Employee 3:");
-						e3.printDetails();
-					}
-					else if (searchId == e4.getId())
-					{
-						System.out.println("Employee 4:");
-						e4.printDetails();
-					}
-					else if (searchId == e5.getId())
-					{
-						System.out.println("Employee 5:");
-						e5.printDetails();
-					}
-					else
-					{
-						System.out.println("ID " + searchId + " not found.");
-					}
+					int searchId = inputScanner.nextInt();
+					searchEmployeeByIdAndPrintDetails(searchId);
 					break;
 				case 4:
 					System.out.println("Which employee? (1-5): ");
@@ -133,7 +78,81 @@ public class PayrollSystem
 					break;
 			}
 		}
+		
 		// Bid farewell to the user
 		System.out.println("Thanks for playing!");
+	}
+	
+	private static void setEmployeeDataFromUser()
+	{
+		Scanner inputScanner = new Scanner(System.in);
+		switch (inputScanner.nextInt())
+		{
+			case 1:
+				e1.setAllFromUserInput();
+				break;
+			case 2:
+				e2.setAllFromUserInput();
+				break;
+			case 3:
+				e3.setAllFromUserInput();
+				break;
+			case 4:
+				e4.setAllFromUserInput();
+				break;
+			case 5:
+				e5.setAllFromUserInput();
+				break;
+			default:
+				System.out.println("Employee not found.");
+				break;
+		}
+	}
+	
+	private static void printAllEmployeeData()
+	{
+		System.out.println("1st employee:");
+		e1.printDetails();
+		System.out.println("2nd employee:");
+		e2.printDetails();
+		System.out.println("3rd employee:");
+		e3.printDetails();
+		System.out.println("4th employee:");
+		e4.printDetails();
+		System.out.println("5th employee:");
+		e5.printDetails();
+	}
+		
+	private static void searchEmployeeByIdAndPrintDetails(int searchId)
+	{
+		if (searchId == e1.getId())
+		{
+			System.out.println("Employee 1:");
+			e1.printDetails();
+		}
+		else if (searchId == e2.getId())
+		{
+			System.out.println("Employee 2:");
+			e2.printDetails();
+		}
+		else if (searchId == e3.getId())
+		{
+			System.out.println("Employee 3:");
+			e3.printDetails();
+		}
+		else if (searchId == e4.getId())
+		{
+			System.out.println("Employee 4:");
+			e4.printDetails();
+		}
+		else if (searchId == e5.getId())
+		{
+			System.out.println("Employee 5:");
+			e5.printDetails();
+		}
+		else
+		{
+			System.out.println("ID " + searchId + " not found.");
+		}
 	}
 }
