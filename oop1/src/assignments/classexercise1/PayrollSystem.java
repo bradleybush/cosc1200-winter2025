@@ -50,7 +50,10 @@ public class PayrollSystem
 					searchEmployeeByIdAndPrintDetails(searchId);
 					break;
 				case 4:
+					// Prompt user for employee number
 					System.out.println("Which employee? (1-5): ");
+					// Switch inputted employee number and allow the
+					// user to set that employee's salary
 					switch (inputScanner.nextInt())
 					{
 						case 1:
@@ -69,11 +72,14 @@ public class PayrollSystem
 							e5.setSalaryFromUserInput();
 							break;
 						default:
+							// Input number does not correspond to a
+							// valid employee, display error
 							System.out.println("Employee not found.");
 							break;
 					}
 					break;
 				case 5:
+					// Cause the program loop to end/stop looping
 					continueProgram = false;
 					break;
 			}
