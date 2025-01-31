@@ -83,6 +83,15 @@ public class Employee
 		return salary * (1.0 - taxRate);
 	}
 	
+	public void printDetails()
+	{
+		System.out.println("ID: " + id);
+		System.out.println("Name: " + name);
+		System.out.println("Department: " + department);
+		System.out.println("Salary: " + salary);
+		System.out.println("Tax Rate: " + taxRate);
+	}
+	
 	public void setIdFromUserInput()
 	{
 		Scanner inputScanner = new Scanner(System.in);
@@ -125,14 +134,5 @@ public class Employee
 		setDepartmentFromUserInput();
 		setSalaryFromUserInput();
 		setTaxRateFromUserInput();
-	}
-	
-	public void printDetails()
-	{
-		System.out.println("ID: " + id);
-		System.out.println("Name: " + name);
-		System.out.println("Department: " + department);
-		System.out.println("Salary: " + salary);
-		System.out.println("Tax Rate: " + taxRate);
 	}
 }
