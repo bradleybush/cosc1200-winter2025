@@ -26,11 +26,18 @@ public class Main
 {
 	public static void main(String[] args)
 	{
+		// --------------
+		// Greet the user
+		// --------------
+		System.out.println("\nWelcome to the pass by value/" +
+				           "pass by reference/" +
+				           "function demonstration program!");
+		
 		// -------------
 		// Pass by value
 		// -------------
 		// Show that value does not change for int
-		System.out.println("\nPASS BY VALUE");
+		System.out.println("\nPASS BY VALUE:");
 		int valToIncrement = 5;
 		// Print the un-incremented value
 		System.out.println("Value before increment(): " + valToIncrement);
@@ -43,7 +50,7 @@ public class Main
 		// Pass by reference
 		// -----------------
 		// Show that element values do change for array
-		System.out.println("\nPASS BY REFERENCE");
+		System.out.println("\nPASS BY REFERENCE:");
 		int[] arrToModify = {5, 10, 15, 20};
 		// Print the unmodified array
 		System.out.println("Array before modifyArray(): " + Arrays.toString(arrToModify));
@@ -56,7 +63,7 @@ public class Main
 		// Function demonstration
 		// ----------------------
 		// Ask the user to enter an array of size 5
-		System.out.println("\nFUNCTION DEMONSTRATION");
+		System.out.println("\nFUNCTION DEMONSTRATION:");
 		System.out.println("Please enter five values to be in the array.");
 		int[] userArr = new int[5];
 		Scanner inputScanner = new Scanner(System.in);
@@ -71,15 +78,20 @@ public class Main
 		System.out.print("Fifth value: ");
 		userArr[4] = inputScanner.nextInt();
 		// Ask the user to enter two indexes to swap in the array
-		System.out.println("Please enter two indices to swap in the array.");
-		int swapIndexFirst = getIndexFromUser("First index: ", 0, 5);
-		int swapIndexSecond = getIndexFromUser("Second index: ", 0, 5);
+		System.out.println("\nPlease enter two indices to swap in the array.");
+		int swapIndexFirst = getIndexFromUser("First index: ", 0, 4);
+		int swapIndexSecond = getIndexFromUser("Second index: ", 0, 4);
 		// Print the unmodified array
 		System.out.println("Array before swapValues(): " + Arrays.toString(userArr));
 		// Swap the elements at the specified indexes
 		swapValues(userArr, swapIndexFirst, swapIndexSecond);
 		// Print the modified array
 		System.out.println("Array after swapValues(): " + Arrays.toString(userArr));
+		
+		// ------------------------
+		// Bid farewell to the user
+		// ------------------------
+		System.out.println("\nThanks for playing!");
 	}
 	// Takes an integer, adds 10 to it, and prints the result.
 	private static void increment(int num)
@@ -122,7 +134,9 @@ public class Main
 		int index = inputScanner.nextInt();
 		while ((index < min) || (index > max))
 		{
-			System.out.println("Please enter an index between " + min + " and " + max);
+			System.out.println("Invalid index. " +
+					           "Please enter an index between " +
+					           min + " and " + max);
 			System.out.print(prompt);
 			index = inputScanner.nextInt();
 		}
