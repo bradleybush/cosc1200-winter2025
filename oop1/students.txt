@@ -1,0 +1,6 @@
+Alice,10,87
+Bob,10, 92
+Charlie,11,76
+Diana, 12,59
+john, 34, 99
+David, 13, 75
